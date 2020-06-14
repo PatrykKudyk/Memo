@@ -28,7 +28,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [AccountFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class MediumGameFragment : Fragment() {
+class BigGameFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -38,32 +38,42 @@ class MediumGameFragment : Fragment() {
     private lateinit var backButton: View
     private lateinit var imageArray: Array<Array<ImageSet>>
     private lateinit var cCell: Array<Int>
-    private lateinit var medium00: ImageView
-    private lateinit var medium01: ImageView
-    private lateinit var medium02: ImageView
-    private lateinit var medium03: ImageView
-    private lateinit var medium04: ImageView
-    private lateinit var medium10: ImageView
-    private lateinit var medium11: ImageView
-    private lateinit var medium12: ImageView
-    private lateinit var medium13: ImageView
-    private lateinit var medium14: ImageView
-    private lateinit var medium20: ImageView
-    private lateinit var medium21: ImageView
-    private lateinit var medium22: ImageView
-    private lateinit var medium23: ImageView
-    private lateinit var medium24: ImageView
-    private lateinit var medium30: ImageView
-    private lateinit var medium31: ImageView
-    private lateinit var medium32: ImageView
-    private lateinit var medium33: ImageView
-    private lateinit var medium34: ImageView
-    private lateinit var medium40: ImageView
-    private lateinit var medium41: ImageView
-    private lateinit var medium42: ImageView
-    private lateinit var medium43: ImageView
-    private lateinit var medium44: ImageView
-
+    private lateinit var big00: ImageView
+    private lateinit var big01: ImageView
+    private lateinit var big02: ImageView
+    private lateinit var big03: ImageView
+    private lateinit var big04: ImageView
+    private lateinit var big05: ImageView
+    private lateinit var big10: ImageView
+    private lateinit var big11: ImageView
+    private lateinit var big12: ImageView
+    private lateinit var big13: ImageView
+    private lateinit var big14: ImageView
+    private lateinit var big15: ImageView
+    private lateinit var big20: ImageView
+    private lateinit var big21: ImageView
+    private lateinit var big22: ImageView
+    private lateinit var big23: ImageView
+    private lateinit var big24: ImageView
+    private lateinit var big25: ImageView
+    private lateinit var big30: ImageView
+    private lateinit var big31: ImageView
+    private lateinit var big32: ImageView
+    private lateinit var big33: ImageView
+    private lateinit var big34: ImageView
+    private lateinit var big35: ImageView
+    private lateinit var big40: ImageView
+    private lateinit var big41: ImageView
+    private lateinit var big42: ImageView
+    private lateinit var big43: ImageView
+    private lateinit var big44: ImageView
+    private lateinit var big45: ImageView
+    private lateinit var big50: ImageView
+    private lateinit var big51: ImageView
+    private lateinit var big52: ImageView
+    private lateinit var big53: ImageView
+    private lateinit var big54: ImageView
+    private lateinit var big55: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,7 +88,7 @@ class MediumGameFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        rootView = inflater.inflate(R.layout.fragment_medium_game, container, false);
+        rootView = inflater.inflate(R.layout.fragment_big_game, container, false);
         initFragment()
         return rootView
     }
@@ -109,7 +119,7 @@ class MediumGameFragment : Fragment() {
     companion object {
         @JvmStatic
         fun newInstance() =
-            MediumGameFragment().apply {
+            BigGameFragment().apply {
                 arguments = Bundle().apply {
                 }
             }
@@ -127,109 +137,121 @@ class MediumGameFragment : Fragment() {
         implementLogic()
     }
 
-    private fun checkMiddle(x: Int, y: Int): Boolean {
-        if (x == 2) {
-            if (y == 2) {
-                return true
-            }
-        }
-        return false
-    }
-
     private fun initImageArray() {
-        medium00 = rootView.findViewById(R.id.medium_00)
-        medium01 = rootView.findViewById(R.id.medium_01)
-        medium02 = rootView.findViewById(R.id.medium_02)
-        medium03 = rootView.findViewById(R.id.medium_03)
-        medium04 = rootView.findViewById(R.id.medium_04)
-        medium10 = rootView.findViewById(R.id.medium_10)
-        medium11 = rootView.findViewById(R.id.medium_11)
-        medium12 = rootView.findViewById(R.id.medium_12)
-        medium13 = rootView.findViewById(R.id.medium_13)
-        medium14 = rootView.findViewById(R.id.medium_14)
-        medium20 = rootView.findViewById(R.id.medium_20)
-        medium21 = rootView.findViewById(R.id.medium_21)
-        medium22 = rootView.findViewById(R.id.medium_22)
-        medium23 = rootView.findViewById(R.id.medium_23)
-        medium24 = rootView.findViewById(R.id.medium_24)
-        medium30 = rootView.findViewById(R.id.medium_30)
-        medium31 = rootView.findViewById(R.id.medium_31)
-        medium32 = rootView.findViewById(R.id.medium_32)
-        medium33 = rootView.findViewById(R.id.medium_33)
-        medium34 = rootView.findViewById(R.id.medium_34)
-        medium40 = rootView.findViewById(R.id.medium_40)
-        medium41 = rootView.findViewById(R.id.medium_41)
-        medium42 = rootView.findViewById(R.id.medium_42)
-        medium43 = rootView.findViewById(R.id.medium_43)
-        medium44 = rootView.findViewById(R.id.medium_44)
+        big00 = rootView.findViewById(R.id.big_00)
+        big01 = rootView.findViewById(R.id.big_01)
+        big02 = rootView.findViewById(R.id.big_02)
+        big03 = rootView.findViewById(R.id.big_03)
+        big04 = rootView.findViewById(R.id.big_04)
+        big05 = rootView.findViewById(R.id.big_05)
+        big10 = rootView.findViewById(R.id.big_10)
+        big11 = rootView.findViewById(R.id.big_11)
+        big12 = rootView.findViewById(R.id.big_12)
+        big13 = rootView.findViewById(R.id.big_13)
+        big14 = rootView.findViewById(R.id.big_14)
+        big15 = rootView.findViewById(R.id.big_15)
+        big20 = rootView.findViewById(R.id.big_20)
+        big21 = rootView.findViewById(R.id.big_21)
+        big22 = rootView.findViewById(R.id.big_22)
+        big23 = rootView.findViewById(R.id.big_23)
+        big24 = rootView.findViewById(R.id.big_24)
+        big25 = rootView.findViewById(R.id.big_25)
+        big30 = rootView.findViewById(R.id.big_30)
+        big31 = rootView.findViewById(R.id.big_31)
+        big32 = rootView.findViewById(R.id.big_32)
+        big33 = rootView.findViewById(R.id.big_33)
+        big34 = rootView.findViewById(R.id.big_34)
+        big35 = rootView.findViewById(R.id.big_35)
+        big40 = rootView.findViewById(R.id.big_40)
+        big41 = rootView.findViewById(R.id.big_41)
+        big42 = rootView.findViewById(R.id.big_42)
+        big43 = rootView.findViewById(R.id.big_43)
+        big44 = rootView.findViewById(R.id.big_44)
+        big45 = rootView.findViewById(R.id.big_45)
+        big50 = rootView.findViewById(R.id.big_50)
+        big51 = rootView.findViewById(R.id.big_51)
+        big52 = rootView.findViewById(R.id.big_52)
+        big53 = rootView.findViewById(R.id.big_53)
+        big54 = rootView.findViewById(R.id.big_54)
+        big55 = rootView.findViewById(R.id.big_55)
 
         val array1 = arrayOf(
-            ImageSet(medium00, false, -1, false),
-            ImageSet(medium01, false, -1, false),
-            ImageSet(medium02, false, -1, false),
-            ImageSet(medium03, false, -1, false),
-            ImageSet(medium04, false, -1, false)
+            ImageSet(big00, false, -1, false),
+            ImageSet(big01, false, -1, false),
+            ImageSet(big02, false, -1, false),
+            ImageSet(big03, false, -1, false),
+            ImageSet(big04, false, -1, false),
+            ImageSet(big05, false, -1, false)
         )
         val array2 = arrayOf(
-            ImageSet(medium10, false, -1, false),
-            ImageSet(medium11, false, -1, false),
-            ImageSet(medium12, false, -1, false),
-            ImageSet(medium13, false, -1, false),
-            ImageSet(medium14, false, -1, false)
+            ImageSet(big10, false, -1, false),
+            ImageSet(big11, false, -1, false),
+            ImageSet(big12, false, -1, false),
+            ImageSet(big13, false, -1, false),
+            ImageSet(big14, false, -1, false),
+            ImageSet(big15, false, -1, false)
         )
         val array3 = arrayOf(
-            ImageSet(medium20, false, -1, false),
-            ImageSet(medium21, false, -1, false),
-            ImageSet(medium22, false, -1, false),
-            ImageSet(medium23, false, -1, false),
-            ImageSet(medium24, false, -1, false)
+            ImageSet(big20, false, -1, false),
+            ImageSet(big21, false, -1, false),
+            ImageSet(big22, false, -1, false),
+            ImageSet(big23, false, -1, false),
+            ImageSet(big24, false, -1, false),
+            ImageSet(big25, false, -1, false)
         )
         val array4 = arrayOf(
-            ImageSet(medium30, false, -1, false),
-            ImageSet(medium31, false, -1, false),
-            ImageSet(medium32, false, -1, false),
-            ImageSet(medium33, false, -1, false),
-            ImageSet(medium34, false, -1, false)
+            ImageSet(big30, false, -1, false),
+            ImageSet(big31, false, -1, false),
+            ImageSet(big32, false, -1, false),
+            ImageSet(big33, false, -1, false),
+            ImageSet(big34, false, -1, false),
+            ImageSet(big35, false, -1, false)
         )
 
         val array5 = arrayOf(
-            ImageSet(medium40, false, -1, false),
-            ImageSet(medium41, false, -1, false),
-            ImageSet(medium42, false, -1, false),
-            ImageSet(medium43, false, -1, false),
-            ImageSet(medium44, false, -1, false)
+            ImageSet(big40, false, -1, false),
+            ImageSet(big41, false, -1, false),
+            ImageSet(big42, false, -1, false),
+            ImageSet(big43, false, -1, false),
+            ImageSet(big44, false, -1, false),
+            ImageSet(big45, false, -1, false)
         )
 
-        imageArray = arrayOf(array1, array2, array3, array4, array5)
+        val array6 = arrayOf(
+            ImageSet(big50, false, -1, false),
+            ImageSet(big51, false, -1, false),
+            ImageSet(big52, false, -1, false),
+            ImageSet(big53, false, -1, false),
+            ImageSet(big54, false, -1, false),
+            ImageSet(big55, false, -1, false)
+        )
 
-        for (i in 0..4) {
-            for (j in 0..4) {
-                if (!checkMiddle(i, j)) {
-                    imageArray[i][j].imageView.setImageDrawable(
-                        ContextCompat.getDrawable(
-                            rootView.context,
-                            R.drawable.cards_background
-                        )
+        imageArray = arrayOf(array1, array2, array3, array4, array5, array6)
+
+        for (i in 0..5) {
+            for (j in 0..5) {
+                imageArray[i][j].imageView.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        rootView.context,
+                        R.drawable.cards_background
                     )
-                }
+                )
+
             }
         }
-        imageArray[2][2].imageView.isClickable = false
     }
 
     private fun shuffleImages() {
-        var numbers = arrayOf(2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2)
+        var numbers = arrayOf(2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2)
 
-        for (i in 0..4) {
-            for (j in 0..4) {
-                if (!checkMiddle(i, j)) {
-                    var number: Int
-                    do {
-                        number = Random.nextInt(0, 12)
-                    } while (numbers[number] == 0)
-                    numbers[number]--
-                    imageArray[i][j].imageNumber = number
-                }
+        for (i in 0..5) {
+            for (j in 0..5) {
+                var number: Int
+                do {
+                    number = Random.nextInt(0, 12)
+                } while (numbers[number] == 0)
+                numbers[number]--
+                imageArray[i][j].imageNumber = number
             }
         }
 
@@ -333,23 +355,69 @@ class MediumGameFragment : Fragment() {
                     )
                 )
             }
+            12 -> {
+                imageArray[x][y].imageView.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        rootView.context,
+                        R.drawable.character_princess_hot_dog
+                    )
+                )
+            }
+            13 -> {
+                imageArray[x][y].imageView.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        rootView.context,
+                        R.drawable.character_princess_ghost
+                    )
+                )
+            }
+            14 -> {
+                imageArray[x][y].imageView.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        rootView.context,
+                        R.drawable.character_princess_breakfast
+                    )
+                )
+            }
+            15 -> {
+                imageArray[x][y].imageView.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        rootView.context,
+                        R.drawable.character_pertikov
+                    )
+                )
+            }
+            16 -> {
+                imageArray[x][y].imageView.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        rootView.context,
+                        R.drawable.character_susan
+                    )
+                )
+            }
+            17 -> {
+                imageArray[x][y].imageView.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        rootView.context,
+                        R.drawable.character_skrobek
+                    )
+                )
+            }
         }
     }
 
     private fun checkOpened() {
         var first = arrayOf(-1, -1)
         var second = arrayOf(-1, -1)
-        for (i in 0..4) {
-            for (j in 0..4) {
-                if (!checkMiddle(i, j)) {
-                    if (imageArray[i][j].isOpened) {
-                        if (first[0] == -1) {
-                            first[0] = i
-                            first[1] = j
-                        } else {
-                            second[0] = i
-                            second[1] = j
-                        }
+        for (i in 0..5) {
+            for (j in 0..5) {
+                if (imageArray[i][j].isOpened) {
+                    if (first[0] == -1) {
+                        first[0] = i
+                        first[1] = j
+                    } else {
+                        second[0] = i
+                        second[1] = j
                     }
                 }
             }
@@ -395,16 +463,14 @@ class MediumGameFragment : Fragment() {
     }
 
     private fun isEnd(): Boolean {
-        for (i in 0..4) {
-            for (j in 0..4) {
-                if (!checkMiddle(i, j)) {
-                    if (!imageArray[i][j].isDone) {
-                        return false
-                    }
+        for (i in 0..5) {
+            for (j in 0..5) {
+                if (!imageArray[i][j].isDone) {
+                    return false
                 }
             }
         }
-        val winFragment = WinFragment.newInstance(2)
+        val winFragment = WinFragment.newInstance(3)
         fragmentManager
             ?.beginTransaction()
             ?.setCustomAnimations(
@@ -468,6 +534,16 @@ class MediumGameFragment : Fragment() {
                 }, 260
             )
         }
+        imageArray[0][5].imageView.setOnClickListener {
+            setImage(0, 5, imageArray[0][5].imageNumber)
+            imageArray[0][5].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
         imageArray[1][0].imageView.setOnClickListener {
             setImage(1, 0, imageArray[1][0].imageNumber)
             imageArray[1][0].isOpened = true
@@ -518,6 +594,16 @@ class MediumGameFragment : Fragment() {
                 }, 260
             )
         }
+        imageArray[1][5].imageView.setOnClickListener {
+            setImage(1, 5, imageArray[1][5].imageNumber)
+            imageArray[1][5].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
         imageArray[2][0].imageView.setOnClickListener {
             setImage(2, 0, imageArray[2][0].imageNumber)
             imageArray[2][0].isOpened = true
@@ -561,6 +647,16 @@ class MediumGameFragment : Fragment() {
         imageArray[2][4].imageView.setOnClickListener {
             setImage(2, 4, imageArray[2][4].imageNumber)
             imageArray[2][4].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+        imageArray[2][5].imageView.setOnClickListener {
+            setImage(2, 5, imageArray[2][5].imageNumber)
+            imageArray[2][5].isOpened = true
             Handler().postDelayed(
                 {
                     checkOpened()
@@ -619,7 +715,16 @@ class MediumGameFragment : Fragment() {
                 }, 260
             )
         }
-
+        imageArray[3][5].imageView.setOnClickListener {
+            setImage(3, 5, imageArray[3][5].imageNumber)
+            imageArray[3][5].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
         imageArray[4][0].imageView.setOnClickListener {
             setImage(4, 0, imageArray[4][0].imageNumber)
             imageArray[4][0].isOpened = true
@@ -663,6 +768,76 @@ class MediumGameFragment : Fragment() {
         imageArray[4][4].imageView.setOnClickListener {
             setImage(4, 4, imageArray[4][4].imageNumber)
             imageArray[4][4].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+        imageArray[4][5].imageView.setOnClickListener {
+            setImage(4, 5, imageArray[4][5].imageNumber)
+            imageArray[4][5].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+        imageArray[5][0].imageView.setOnClickListener {
+            setImage(5, 0, imageArray[5][0].imageNumber)
+            imageArray[5][0].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+        imageArray[5][1].imageView.setOnClickListener {
+            setImage(5, 1, imageArray[5][1].imageNumber)
+            imageArray[5][1].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+        imageArray[5][2].imageView.setOnClickListener {
+            setImage(5, 2, imageArray[5][2].imageNumber)
+            imageArray[5][2].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+        imageArray[5][3].imageView.setOnClickListener {
+            setImage(5, 3, imageArray[5][3].imageNumber)
+            imageArray[5][3].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+        imageArray[5][4].imageView.setOnClickListener {
+            setImage(5, 4, imageArray[5][4].imageNumber)
+            imageArray[5][4].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+        imageArray[5][5].imageView.setOnClickListener {
+            setImage(5, 5, imageArray[5][5].imageNumber)
+            imageArray[5][5].isOpened = true
             Handler().postDelayed(
                 {
                     checkOpened()
