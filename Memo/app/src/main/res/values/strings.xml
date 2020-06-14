@@ -10,4 +10,7 @@
         4. If they match, they\'re removed\n\n
         5. If they don\'t match, turn them back over\n\n
         6. The game is over when all the images have been matched</string>
+    <string name="size_small">Small</string>
+    <string name="size_medium">Medium</string>
+    <string name="size_big">Big</string>
 </resources>
