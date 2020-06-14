@@ -4,4 +4,10 @@
     <string name="app_title_part_2">Memo</string>
     <string name="menu_new_game">New game</string>
     <string name="menu_rules">Rules</string>
+    <string name="rules">1. Images are mixed up\n\n
+        2. They are placed face down\n\n
+        3. You tap 2 images\n\n
+        4. If they match, they\'re removed\n\n
+        5. If they don\'t match, turn them back over\n\n
+        6. The game is over when all the images have been matched</string>
 </resources>
