@@ -36,27 +36,27 @@
                     android:id="@+id/medium_01"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="1dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/medium_02"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="1dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/medium_03"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="1dp"
                     android:src="@drawable/character_fin" />
                 <ImageView
                     android:id="@+id/medium_04"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="1dp"
                     android:src="@drawable/character_fin" />
             </LinearLayout>
 
@@ -76,28 +76,28 @@
                     android:id="@+id/medium_11"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="1dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/medium_12"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="1dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/medium_13"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="1dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/medium_14"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="1dp"
                     android:src="@drawable/character_fin" />
             </LinearLayout>
 
@@ -117,28 +117,28 @@
                     android:id="@+id/medium_21"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="1dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/medium_22"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="1dp"
                     android:src="@drawable/card_done" />
 
                 <ImageView
                     android:id="@+id/medium_23"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="1dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/medium_24"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="1dp"
                     android:src="@drawable/character_fin" />
             </LinearLayout>
 
@@ -158,28 +158,28 @@
                     android:id="@+id/medium_31"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="1dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/medium_32"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="1dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/medium_33"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="1dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/medium_34"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="1dp"
                     android:src="@drawable/character_fin" />
             </LinearLayout>
 
@@ -199,28 +199,28 @@
                     android:id="@+id/medium_41"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="1dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/medium_42"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="1dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/medium_43"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="1dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/medium_44"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="1dp"
                     android:src="@drawable/character_fin" />
             </LinearLayout>
 
