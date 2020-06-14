@@ -137,28 +137,28 @@ class SmallGameFragment : Fragment() {
         small33 = rootView.findViewById(R.id.small_33)
 
         val array1 = arrayOf(
-            ImageSet(small00, false, -1),
-            ImageSet(small01, false, -1),
-            ImageSet(small02, false, -1),
-            ImageSet(small03, false, -1)
+            ImageSet(small00, false, -1, false),
+            ImageSet(small01, false, -1, false),
+            ImageSet(small02, false, -1, false),
+            ImageSet(small03, false, -1, false)
         )
         val array2 = arrayOf(
-            ImageSet(small10, false, -1),
-            ImageSet(small11, false, -1),
-            ImageSet(small12, false, -1),
-            ImageSet(small13, false, -1)
+            ImageSet(small10, false, -1, false),
+            ImageSet(small11, false, -1, false),
+            ImageSet(small12, false, -1, false),
+            ImageSet(small13, false, -1, false)
         )
         val array3 = arrayOf(
-            ImageSet(small20, false, -1),
-            ImageSet(small21, false, -1),
-            ImageSet(small22, false, -1),
-            ImageSet(small23, false, -1)
+            ImageSet(small20, false, -1, false),
+            ImageSet(small21, false, -1, false),
+            ImageSet(small22, false, -1, false),
+            ImageSet(small23, false, -1, false)
         )
         val array4 = arrayOf(
-            ImageSet(small30, false, -1),
-            ImageSet(small31, false, -1),
-            ImageSet(small32, false, -1),
-            ImageSet(small33, false, -1)
+            ImageSet(small30, false, -1, false),
+            ImageSet(small31, false, -1, false),
+            ImageSet(small32, false, -1, false),
+            ImageSet(small33, false, -1, false)
         )
 
         imageArray = arrayOf(array1, array2, array3, array4)
@@ -295,6 +295,7 @@ class SmallGameFragment : Fragment() {
                 )
                 imageArray[first[0]][first[1]].imageView.isClickable = false
                 imageArray[first[0]][first[1]].isOpened = false
+                imageArray[first[0]][first[1]].isDone = true
                 imageArray[second[0]][second[1]].imageView.setImageDrawable(
                     ContextCompat.getDrawable(
                         rootView.context,
@@ -303,6 +304,7 @@ class SmallGameFragment : Fragment() {
                 )
                 imageArray[second[0]][second[1]].imageView.isClickable = false
                 imageArray[second[0]][second[1]].isOpened = false
+                imageArray[second[0]][second[1]].isDone = true
             } else {
                 imageArray[first[0]][first[1]].imageView.setImageDrawable(
                     ContextCompat.getDrawable(
@@ -323,8 +325,24 @@ class SmallGameFragment : Fragment() {
 
     }
 
-    private fun isEnd() {
-
+    private fun isEnd(): Boolean {
+        for (i in 0..3) {
+            for (j in 0..3) {
+                if (!imageArray[i][j].isDone) {
+                    return false
+                }
+            }
+        }
+        val winFragment = WinFragment.newInstance(1)
+        fragmentManager
+            ?.beginTransaction()
+            ?.setCustomAnimations(
+                R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                R.anim.enter_right_to_left, R.anim.exit_left_to_right
+            )
+            ?.replace(R.id.frame_layout, winFragment)
+            ?.commit()
+        return true
     }
 
     private fun implementLogic() {
