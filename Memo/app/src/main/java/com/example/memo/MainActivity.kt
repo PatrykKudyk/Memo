@@ -9,7 +9,6 @@ class MainActivity : AppCompatActivity(),
     BigGameFragment.OnFragmentInteractionListener,
     MainMenuFragment.OnFragmentInteractionListener,
     MediumGameFragment.OnFragmentInteractionListener,
-    SizeChoiceFragment.OnFragmentInteractionListener,
     SmallGameFragment.OnFragmentInteractionListener,
     RulesFragment.OnFragmentInteractionListener,
     GameSizeFragment.OnFragmentInteractionListener {
