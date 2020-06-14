@@ -23,32 +23,33 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:padding="3dp">
 
                 <ImageView
                     android:id="@+id/small_00"
-                    android:layout_width="93dp"
-                    android:layout_height="93dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/small_01"
-                    android:layout_width="93dp"
-                    android:layout_height="93dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginStart="2dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/small_02"
-                    android:layout_width="93dp"
-                    android:layout_height="93dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginStart="2dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/small_03"
-                    android:layout_width="93dp"
-                    android:layout_height="93dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginStart="2dp"
                     android:src="@drawable/character_fin" />
             </LinearLayout>
@@ -56,32 +57,33 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:padding="3dp">
 
                 <ImageView
                     android:id="@+id/small_10"
-                    android:layout_width="93dp"
-                    android:layout_height="93dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/small_11"
-                    android:layout_width="93dp"
-                    android:layout_height="93dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginStart="2dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/small_12"
-                    android:layout_width="93dp"
-                    android:layout_height="93dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginStart="2dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/small_13"
-                    android:layout_width="93dp"
-                    android:layout_height="93dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginStart="2dp"
                     android:src="@drawable/character_fin" />
             </LinearLayout>
@@ -89,32 +91,33 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:padding="3dp">
 
                 <ImageView
                     android:id="@+id/small_20"
-                    android:layout_width="93dp"
-                    android:layout_height="93dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/small_21"
-                    android:layout_width="93dp"
-                    android:layout_height="93dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginStart="2dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/small_22"
-                    android:layout_width="93dp"
-                    android:layout_height="93dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginStart="2dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/small_23"
-                    android:layout_width="93dp"
-                    android:layout_height="93dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginStart="2dp"
                     android:src="@drawable/character_fin" />
             </LinearLayout>
@@ -122,32 +125,33 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:padding="3dp">
 
                 <ImageView
                     android:id="@+id/small_30"
-                    android:layout_width="93dp"
-                    android:layout_height="93dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/small_31"
-                    android:layout_width="93dp"
-                    android:layout_height="93dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginStart="2dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/small_32"
-                    android:layout_width="93dp"
-                    android:layout_height="93dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginStart="2dp"
                     android:src="@drawable/character_fin" />
 
                 <ImageView
                     android:id="@+id/small_33"
-                    android:layout_width="93dp"
-                    android:layout_height="93dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginStart="2dp"
                     android:src="@drawable/character_fin" />
             </LinearLayout>
