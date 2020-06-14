@@ -248,7 +248,7 @@ class BigGameFragment : Fragment() {
             for (j in 0..5) {
                 var number: Int
                 do {
-                    number = Random.nextInt(0, 18)
+                    number = Random.nextInt(0, 12)
                 } while (numbers[number] == 0)
                 numbers[number]--
                 imageArray[i][j].imageNumber = number
