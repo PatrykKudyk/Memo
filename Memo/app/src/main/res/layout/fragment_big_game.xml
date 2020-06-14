@@ -307,7 +307,7 @@
                     android:layout_marginStart="1dp"
                     android:src="@drawable/character_fin" />
             </LinearLayout>
-            
+
             <Button
                 android:id="@+id/back_button"
                 android:layout_width="200dp"
