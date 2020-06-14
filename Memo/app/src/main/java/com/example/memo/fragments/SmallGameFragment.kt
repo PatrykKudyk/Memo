@@ -1,10 +1,9 @@
 package com.example.memo.fragments
 
 import android.content.Context
-import android.media.Image
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
+import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +12,6 @@ import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import com.example.memo.R
 import com.example.memo.models.ImageSet
-import kotlinx.android.synthetic.main.fragment_small_game.*
 import kotlin.random.Random
 
 
@@ -39,6 +37,7 @@ class SmallGameFragment : Fragment() {
     private lateinit var rootView: View
     private lateinit var backButton: View
     private lateinit var imageArray: Array<Array<ImageSet>>
+    private lateinit var cCell: Array<Int>
     private lateinit var small00: ImageView
     private lateinit var small01: ImageView
     private lateinit var small02: ImageView
@@ -109,7 +108,7 @@ class SmallGameFragment : Fragment() {
 
     private fun initFragment() {
         backButton = rootView.findViewById(R.id.back_button)
-
+        cCell = arrayOf(-1, -1)
         backButton.setOnClickListener {
             fragmentManager
                 ?.popBackStack()
@@ -192,8 +191,6 @@ class SmallGameFragment : Fragment() {
 
     }
 
-
-
     private fun setImage(x: Int, y: Int, number: Int) {
         when (number) {
             0 -> {
@@ -203,7 +200,6 @@ class SmallGameFragment : Fragment() {
                         R.drawable.character_fin
                     )
                 )
-                imageArray[x][y].imageNumber = 0
             }
             1 -> {
                 imageArray[x][y].imageView.setImageDrawable(
@@ -212,7 +208,6 @@ class SmallGameFragment : Fragment() {
                         R.drawable.character_jake
                     )
                 )
-                imageArray[x][y].imageNumber = 1
             }
             2 -> {
                 imageArray[x][y].imageView.setImageDrawable(
@@ -221,7 +216,6 @@ class SmallGameFragment : Fragment() {
                         R.drawable.character_marcelina
                     )
                 )
-                imageArray[x][y].imageNumber = 2
             }
             3 -> {
                 imageArray[x][y].imageView.setImageDrawable(
@@ -230,7 +224,6 @@ class SmallGameFragment : Fragment() {
                         R.drawable.character_peppermint
                     )
                 )
-                imageArray[x][y].imageNumber = 3
             }
             4 -> {
                 imageArray[x][y].imageView.setImageDrawable(
@@ -239,7 +232,6 @@ class SmallGameFragment : Fragment() {
                         R.drawable.character_gunter
                     )
                 )
-                imageArray[x][y].imageNumber = 4
             }
             5 -> {
                 imageArray[x][y].imageView.setImageDrawable(
@@ -248,7 +240,6 @@ class SmallGameFragment : Fragment() {
                         R.drawable.character_kgk
                     )
                 )
-                imageArray[x][y].imageNumber = 5
             }
             6 -> {
                 imageArray[x][y].imageView.setImageDrawable(
@@ -257,7 +248,6 @@ class SmallGameFragment : Fragment() {
                         R.drawable.character_ice_king
                     )
                 )
-                imageArray[x][y].imageNumber = 6
             }
             7 -> {
                 imageArray[x][y].imageView.setImageDrawable(
@@ -266,13 +256,241 @@ class SmallGameFragment : Fragment() {
                         R.drawable.character_princess_bubblegum
                     )
                 )
-                imageArray[x][y].imageNumber = 7
             }
         }
     }
 
-    private fun implementLogic() {
-        
+    private fun setBackground(x: Int, y: Int) {
+        imageArray[x][y].imageView.setImageDrawable(
+            ContextCompat.getDrawable(
+                rootView.context,
+                R.drawable.cards_background
+            )
+        )
     }
 
+    private fun checkOpened() {
+        var first = arrayOf(-1, -1)
+        var second = arrayOf(-1, -1)
+        for (i in 0..3) {
+            for (j in 0..3) {
+                if (imageArray[i][j].isOpened) {
+                    if (first[0] == -1) {
+                        first[0] = i
+                        first[1] = j
+                    } else {
+                        second[0] = i
+                        second[1] = j
+                    }
+                }
+            }
+        }
+        if (second[0] != -1) {
+            if (imageArray[first[0]][first[1]].imageNumber == imageArray[second[0]][second[1]].imageNumber) {
+                imageArray[first[0]][first[1]].imageView.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        rootView.context,
+                        R.drawable.card_done
+                    )
+                )
+                imageArray[first[0]][first[1]].imageView.isClickable = false
+                imageArray[first[0]][first[1]].isOpened = false
+                imageArray[second[0]][second[1]].imageView.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        rootView.context,
+                        R.drawable.card_done
+                    )
+                )
+                imageArray[second[0]][second[1]].imageView.isClickable = false
+                imageArray[second[0]][second[1]].isOpened = false
+            } else {
+                imageArray[first[0]][first[1]].imageView.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        rootView.context,
+                        R.drawable.cards_background
+                    )
+                )
+                imageArray[first[0]][first[1]].isOpened = false
+                imageArray[second[0]][second[1]].imageView.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        rootView.context,
+                        R.drawable.cards_background
+                    )
+                )
+                imageArray[second[0]][second[1]].isOpened = false
+            }
+        }
+
+    }
+
+    private fun isEnd() {
+
+    }
+
+    private fun implementLogic() {
+
+        imageArray[0][0].imageView.setOnClickListener {
+            setImage(0, 0, imageArray[0][0].imageNumber)
+            imageArray[0][0].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+        imageArray[0][1].imageView.setOnClickListener {
+            setImage(0, 1, imageArray[0][1].imageNumber)
+            imageArray[0][1].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+        imageArray[0][2].imageView.setOnClickListener {
+            setImage(0, 2, imageArray[0][2].imageNumber)
+            imageArray[0][2].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+        imageArray[0][3].imageView.setOnClickListener {
+            setImage(0, 3, imageArray[0][3].imageNumber)
+            imageArray[0][3].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+
+        imageArray[1][0].imageView.setOnClickListener {
+            setImage(1, 0, imageArray[1][0].imageNumber)
+            imageArray[1][0].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+        imageArray[1][1].imageView.setOnClickListener {
+            setImage(1, 1, imageArray[1][1].imageNumber)
+            imageArray[1][1].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+        imageArray[1][2].imageView.setOnClickListener {
+            setImage(1, 2, imageArray[1][2].imageNumber)
+            imageArray[1][2].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+        imageArray[1][3].imageView.setOnClickListener {
+            setImage(1, 3, imageArray[1][3].imageNumber)
+            imageArray[1][3].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+
+        imageArray[2][0].imageView.setOnClickListener {
+            setImage(2, 0, imageArray[2][0].imageNumber)
+            imageArray[2][0].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+        imageArray[2][1].imageView.setOnClickListener {
+            setImage(2, 1, imageArray[2][1].imageNumber)
+            imageArray[2][1].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+        imageArray[2][2].imageView.setOnClickListener {
+            setImage(2, 2, imageArray[2][2].imageNumber)
+            imageArray[2][2].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+        imageArray[2][3].imageView.setOnClickListener {
+            setImage(2, 3, imageArray[2][3].imageNumber)
+            imageArray[2][3].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+
+        imageArray[3][0].imageView.setOnClickListener {
+            setImage(3, 0, imageArray[3][0].imageNumber)
+            imageArray[3][0].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+        imageArray[3][1].imageView.setOnClickListener {
+            setImage(3, 1, imageArray[3][1].imageNumber)
+            imageArray[3][1].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+        imageArray[3][2].imageView.setOnClickListener {
+            setImage(3, 2, imageArray[3][2].imageNumber)
+            imageArray[3][2].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+        imageArray[3][3].imageView.setOnClickListener {
+            setImage(3, 3, imageArray[3][3].imageNumber)
+            imageArray[3][3].isOpened = true
+            Handler().postDelayed(
+                {
+                    checkOpened()
+                    isEnd()
+                }, 260
+            )
+        }
+    }
 }
