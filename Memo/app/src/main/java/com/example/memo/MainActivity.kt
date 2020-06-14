@@ -11,7 +11,8 @@ class MainActivity : AppCompatActivity(),
     MediumGameFragment.OnFragmentInteractionListener,
     SmallGameFragment.OnFragmentInteractionListener,
     RulesFragment.OnFragmentInteractionListener,
-    GameSizeFragment.OnFragmentInteractionListener {
+    GameSizeFragment.OnFragmentInteractionListener,
+    WinFragment.OnFragmentInteractionListener{
 
     lateinit var mainMenuFragment: MainMenuFragment
     override fun onCreate(savedInstanceState: Bundle?) {
