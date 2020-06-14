@@ -115,10 +115,8 @@ class SmallGameFragment : Fragment() {
                 ?.popBackStack()
         }
         initImageArray()
-        Log.println(Log.DEBUG, "GAME", "Initiated array")
         shuffleImages()
-        Log.println(Log.DEBUG, "GAME", "Shuffled images")
-//        implementLogic()
+        implementLogic()
     }
 
     private fun initImageArray() {
@@ -179,113 +177,22 @@ class SmallGameFragment : Fragment() {
     }
 
     private fun shuffleImages() {
-//        var usedImages = arrayOf(false, false, false, false, false, false, false, false)
-//        var shuffle = 1
-//        for (i in 0..3) {
-//            for (j in 0..3) {
-//                if (shuffle == 9)
-//                    break
-//                if (imageArray[i][j].imageNumber == -1) {
-//                    Log.println(Log.DEBUG, "GAME", "started " + shuffle + " shuffle")
-//
-//                    var number = -1
-//                    var x = -1
-//                    var y = -1
-//
-//                    do {
-//                        number = Random.nextInt(0, 8)
-//                    } while (usedImages[number])
-//                    usedImages[number] = true
-//
-//                    Log.println(Log.DEBUG, "GAME", "\tShuffle of x started")
-//                    do {
-//                        x = Random.nextInt(0, 4)
-//                    } while (!isFirstShuffleCorrect(x, i , j))
-//                    Log.println(Log.DEBUG, "GAME", "\tShuffled " + x)
-//                    Log.println(Log.DEBUG, "GAME", "\tShuffle of y started")
-//                    do {
-//                        y = Random.nextInt(0, 4)
-//                    } while (!isShuffleCorrect(x, y, i, j))
-//                    Log.println(Log.DEBUG, "GAME", "\tShuffled " + y)
-//
-//                    setImage(i, j, number)
-//                    setImage(x, y, number)
-//                    Log.println(Log.DEBUG, "GAME", "ended " + shuffle + " shuffle")
-//                    Log.println(
-//                        Log.DEBUG,
-//                        "GAME",
-//                        "Shuffled " + i + ", " + j + " and " + x + ", " + y + " with number " + number
-//                    )
-//                    shuffle++
-//                }
-//            }
-//        }
+        var numbers = arrayOf(2, 2, 2, 2, 2, 2, 2, 2)
 
-        var number = 0
-
-        for (i in 0..7) {
-            var x1: Int
-            var x2: Int
-            var y1: Int
-            var y2: Int
-            do {
-                x1 = Random.nextInt(0, 4)
-                y1 = Random.nextInt(0, 4)
-            } while (imageArray[x1][y1].imageNumber != -1)
-            do {
-                x2 = Random.nextInt(0, 4)
-                y2 = Random.nextInt(0, 4)
-            } while (checkShuffle(x1, y1, x2, y2))
-            setImage(x1, y1, number)
-            setImage(x2, y2, number)
-            number++
-        }
-
-    }
-
-    private fun checkShuffle(x1: Int, y1: Int, x2: Int, y2: Int): Boolean {
-        if (checkIfShuffledTheSame(x1, y1, x2, y2)) {
-            return true
-        }
-        if (imageArray[x2][y2].imageNumber != -1) {
-            return true
-        }
-        return false
-    }
-
-    private fun checkIfShuffledTheSame(x1: Int, y1: Int, x2: Int, y2: Int): Boolean {
-        if (x1 == x2) {
-            return true
-        }
-        if (y1 == y2) {
-            return true
-        }
-        return false
-    }
-
-    private fun isFirstShuffleCorrect(x: Int, i: Int, j: Int): Boolean {
-        for (k in 0..3) {
-            if (imageArray[x][k].imageNumber == -1) {
-                if (x != i && k != j) {
-                    return true
-                }
+        for (i in 0..3) {
+            for (j in 0..3) {
+                var number: Int
+                do {
+                    number = Random.nextInt(0, 8)
+                } while (numbers[number] == 0)
+                numbers[number]--
+                imageArray[i][j].imageNumber = number
             }
         }
-        return false
+
     }
 
-    private fun isShuffleCorrect(x1: Int, y1: Int, x2: Int, y2: Int): Boolean {
-        if (imageArray[x1][y1].imageNumber != -1) {
-            return false
-        }
-        if (x1 == x2) {
-            return false
-        }
-        if (y1 == y2) {
-            return false
-        }
-        return true
-    }
+
 
     private fun setImage(x: Int, y: Int, number: Int) {
         when (number) {
@@ -365,7 +272,7 @@ class SmallGameFragment : Fragment() {
     }
 
     private fun implementLogic() {
-
+        
     }
 
 }
