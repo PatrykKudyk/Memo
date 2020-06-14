@@ -267,7 +267,7 @@
                 android:padding="3dp">
 
                 <ImageView
-                    android:id="@+id/big_40"
+                    android:id="@+id/big_50"
                     android:layout_width="55dp"
                     android:layout_height="55dp"
                     android:src="@drawable/character_fin" />
@@ -314,7 +314,7 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="24dp"
-                android:background="@drawable/button_background_big"
+                android:background="@drawable/button_background_medium"
                 android:fontFamily="@font/amaticbold"
                 android:text="@string/button_back"
                 android:textColor="@color/colorBackground"
