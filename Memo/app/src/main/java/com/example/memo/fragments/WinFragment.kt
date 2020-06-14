@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import com.example.memo.R
 
 
@@ -30,7 +31,8 @@ class WinFragment : Fragment() {
     private var listener: OnFragmentInteractionListener? = null
 
     private lateinit var rootView: View
-
+    private lateinit var playButton: Button
+    private lateinit var backButton: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,6 +87,53 @@ class WinFragment : Fragment() {
     }
 
     private fun initFragment() {
+        playButton = rootView.findViewById(R.id.button_play_again)
+        backButton = rootView.findViewById(R.id.button_back_to_menu)
 
+        playButton.setOnClickListener {
+            if (param1 == 1) {
+                val smallGameFragment = SmallGameFragment.newInstance()
+                fragmentManager
+                    ?.beginTransaction()
+                    ?.setCustomAnimations(
+                        R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                        R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                    )
+                    ?.replace(R.id.frame_layout, smallGameFragment)
+                    ?.commit()
+            } else if (param1 == 2) {
+                val mediumGameFragment = MediumGameFragment.newInstance()
+                fragmentManager
+                    ?.beginTransaction()
+                    ?.setCustomAnimations(
+                        R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                        R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                    )
+                    ?.replace(R.id.frame_layout, mediumGameFragment)
+                    ?.commit()
+            } else if (param1 == 3) {
+                val bigGameFragment = BigGameFragment.newInstance()
+                fragmentManager
+                    ?.beginTransaction()
+                    ?.setCustomAnimations(
+                        R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                        R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                    )
+                    ?.replace(R.id.frame_layout, bigGameFragment)
+                    ?.commit()
+            }
+        }
+
+        backButton.setOnClickListener {
+            val mainMenuFragment = MainMenuFragment.newInstance()
+            fragmentManager
+                ?.beginTransaction()
+                ?.setCustomAnimations(
+                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                )
+                ?.replace(R.id.frame_layout, mainMenuFragment)
+                ?.commit()
+        }
     }
 }
