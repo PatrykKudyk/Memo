@@ -24,21 +24,21 @@ private const val ARG_PARAM2 = "param2"
  * Use the [AccountFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class GameSizeFragment : Fragment() {
+class WinFragment : Fragment() {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
+    private var param1: Int? = null
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
 
     private lateinit var rootView: View
-    private lateinit var smallButton: Button
-    private lateinit var mediumButton: Button
-    private lateinit var bigButton: Button
+    private lateinit var playButton: Button
+    private lateinit var backButton: Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
+            param1 = it.getInt(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
     }
@@ -48,7 +48,7 @@ class GameSizeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        rootView = inflater.inflate(R.layout.fragment_game_size, container, false);
+        rootView = inflater.inflate(R.layout.fragment_win, container, false);
         initFragment()
         return rootView
     }
@@ -78,51 +78,61 @@ class GameSizeFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() =
-            GameSizeFragment().apply {
+        fun newInstance(param1: Int) =
+            WinFragment().apply {
                 arguments = Bundle().apply {
+                    putInt(ARG_PARAM1, param1)
                 }
             }
     }
 
     private fun initFragment() {
-        smallButton = rootView.findViewById(R.id.button_small)
-        mediumButton = rootView.findViewById(R.id.button_medium)
-        bigButton = rootView.findViewById(R.id.button_big)
+        playButton = rootView.findViewById(R.id.button_play_again)
+        backButton = rootView.findViewById(R.id.button_back_to_menu)
 
-        smallButton.setOnClickListener {
-            val smallGameFragment = SmallGameFragment.newInstance()
-            fragmentManager
-                ?.beginTransaction()
-                ?.setCustomAnimations(
-                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
-                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
-                )
-                ?.replace(R.id.frame_layout, smallGameFragment)
-                ?.commit()
+        playButton.setOnClickListener {
+            if (param1 == 1) {
+                val smallGameFragment = SmallGameFragment.newInstance()
+                fragmentManager
+                    ?.beginTransaction()
+                    ?.setCustomAnimations(
+                        R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                        R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                    )
+                    ?.replace(R.id.frame_layout, smallGameFragment)
+                    ?.commit()
+            } else if (param1 == 2) {
+                val mediumGameFragment = MediumGameFragment.newInstance()
+                fragmentManager
+                    ?.beginTransaction()
+                    ?.setCustomAnimations(
+                        R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                        R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                    )
+                    ?.replace(R.id.frame_layout, mediumGameFragment)
+                    ?.commit()
+            } else if (param1 == 3) {
+                val bigGameFragment = BigGameFragment.newInstance()
+                fragmentManager
+                    ?.beginTransaction()
+                    ?.setCustomAnimations(
+                        R.anim.enter_left_to_right, R.anim.exit_right_to_left,
+                        R.anim.enter_right_to_left, R.anim.exit_left_to_right
+                    )
+                    ?.replace(R.id.frame_layout, bigGameFragment)
+                    ?.commit()
+            }
         }
 
-        mediumButton.setOnClickListener {
-            val mediumGameFragment = MediumGameFragment.newInstance()
+        backButton.setOnClickListener {
+            val mainMenuFragment = MainMenuFragment.newInstance()
             fragmentManager
                 ?.beginTransaction()
                 ?.setCustomAnimations(
                     R.anim.enter_left_to_right, R.anim.exit_right_to_left,
                     R.anim.enter_right_to_left, R.anim.exit_left_to_right
                 )
-                ?.replace(R.id.frame_layout, mediumGameFragment)
-                ?.commit()
-        }
-
-        bigButton.setOnClickListener {
-            val bigGameFragment = BigGameFragment.newInstance()
-            fragmentManager
-                ?.beginTransaction()
-                ?.setCustomAnimations(
-                    R.anim.enter_left_to_right, R.anim.exit_right_to_left,
-                    R.anim.enter_right_to_left, R.anim.exit_left_to_right
-                )
-                ?.replace(R.id.frame_layout, bigGameFragment)
+                ?.replace(R.id.frame_layout, mainMenuFragment)
                 ?.commit()
         }
     }
