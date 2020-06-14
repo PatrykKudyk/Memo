@@ -260,15 +260,6 @@ class SmallGameFragment : Fragment() {
         }
     }
 
-    private fun setBackground(x: Int, y: Int) {
-        imageArray[x][y].imageView.setImageDrawable(
-            ContextCompat.getDrawable(
-                rootView.context,
-                R.drawable.cards_background
-            )
-        )
-    }
-
     private fun checkOpened() {
         var first = arrayOf(-1, -1)
         var second = arrayOf(-1, -1)
