@@ -1,9 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.MainMenuFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground">
+
+        <TextView
+            android:id="@+id/title_1_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/amaticbold"
+            android:gravity="center"
+            android:text="@string/app_title_part_1"
+            android:textSize="60sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title_2_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:fontFamily="@font/amaticbold"
+            android:gravity="center"
+            android:text="@string/app_title_part_2"
+            android:textSize="60sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_1_text_view" />
+
+        <Button
+            android:id="@+id/button_new_game"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/button_background_light"
+            android:textSize="30sp"
+            android:text="@string/menu_new_game"
+            android:fontFamily="@font/amaticbold"
+            android:textColor="@color/colorBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_2_text_view" />
+
+        <Button
+            android:id="@+id/button_rules"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_background_medium"
+            android:fontFamily="@font/amaticbold"
+            android:text="@string/menu_rules"
+            android:textColor="@color/colorBackground"
+            android:textSize="30sp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_new_game" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

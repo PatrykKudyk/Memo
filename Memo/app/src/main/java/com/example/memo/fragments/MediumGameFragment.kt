@@ -1,4 +1,4 @@
-package com.example.tictactoe.fragments
+package com.example.memo.fragments
 
 import android.content.Context
 import android.net.Uri
